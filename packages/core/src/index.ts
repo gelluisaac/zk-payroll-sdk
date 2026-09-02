@@ -41,7 +41,6 @@ export {
   formatRedactedError,
   DEFAULT_ERROR_MESSAGES,
   mapRpcError,
-  PayrollError,
   ErrorCategory,
   ERROR_CODE_REGISTRY,
   getErrorCategory,

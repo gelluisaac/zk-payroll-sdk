@@ -64,7 +64,7 @@ export class PayrollFixtureGenerator {
     const walletId = this.rng.nextInt(1000000, 9999999);
     return {
       id,
-      wallet: `G${walletId}${"A".repeat(50 - String.walletId.length)}`,
+      wallet: `G${walletId}${"A".repeat(50 - String(walletId).length)}`,
       name: `Employee_${id}`,
       department: this.selectDepartment(),
       salary: this.rng.nextBigInt(100_000n, 10_000_000n),
@@ -78,7 +78,7 @@ export class PayrollFixtureGenerator {
    * @returns An array of Employee objects.
    */
   generateEmployees(count: number): Employee[] {
-    return Array.from({ length: count }, (_, i) => this.generateEmployee(`emp_$i}`);
+    return Array.from({ length: count }, (_, i) => this.generateEmployee(`emp_${i}`));
   }
 
   /**
